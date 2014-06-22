@@ -67,8 +67,8 @@ exomepeak <- function(
   PARAMETERS$TRANSCRIPTDB = TRANSCRIPTDB
     
   # check annotation
-  if (is.na(PARAMETERS$GENOME) & is.na(PARAMETERS$GENE_ANNO_GTF)) { 
-		stop("must specify the genome assembly or provide a gene gtf file for exomePeak to work!", 
+  if (is.na(PARAMETERS$GENOME) & is.na(PARAMETERS$GENE_ANNO_GTF) & is.na(PARAMETERS$TRANSCRIPTDB)) { 
+		stop("must specify the genome assembly or provide a gtf file/transcriptDb object for exomePeak to work!", 
 		call. = TRUE, domain = NULL)}
 
   # dependent variables
@@ -162,7 +162,7 @@ exomepeak <- function(
               DIFF=DIFF,DIFF.consis=DIFF.consis,
               BAM_CHRS=BAM_CHRS,
               BAM=bam)
-  # save("tmp_rs", file=paste(dir,'exomePeak.Rdata',sep='/'))
+  save("tmp_rs", file=paste(dir,'exomePeak.Rdata',sep='/'))
   }
   
   # notation

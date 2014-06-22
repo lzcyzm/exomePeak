@@ -8,6 +8,10 @@
   print("Get all the peaks ...")
   peak_result=.get.table.peak.result(PEAK,ANNOTATION,READS_COUNT,SAMPLE_ID,PARAMETERS,
                                      ANNOTATION_BATCH_ID,PEAK$loci2peak_merged)
+  # new change
+  storage.mode(peak_result[[2]]) <- "integer"
+  storage.mode(peak_result[[3]]) <- "integer"
+  
   merged_peak_result = peak_result
   if (length(peak_result) > 0) {
     TOTAL_PEAK_RESULT=peak_result
