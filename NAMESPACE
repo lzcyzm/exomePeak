@@ -1,0 +1,6 @@
+exportPattern("^[[:alpha:]]+")
+export(ctest)
+export(rhtest)
+export(exomepeak)
+export(bltest)
+
