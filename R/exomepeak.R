@@ -65,7 +65,11 @@ exomepeak <- function(
   PARAMETERS$SAVE_RESULT_ON_DISK=SAVE_RESULT_ON_DISK
   PARAMETERS$DIFF_PEAK_METHOD=DIFF_PEAK_METHOD
   PARAMETERS$TRANSCRIPTDB = TRANSCRIPTDB
-    
+  
+  # save parameter, used when debug
+  save_parameters <- FALSE
+  if (save_parameters) {save(PARAMETERS,file = "para.Rdata")}
+  
   # check annotation
   if (is.na(PARAMETERS$GENOME) & is.na(PARAMETERS$GENE_ANNO_GTF) & is.na(PARAMETERS$TRANSCRIPTDB)) { 
 		stop("must specify the genome assembly or provide a gtf file/transcriptDb object for exomePeak to work!", 
