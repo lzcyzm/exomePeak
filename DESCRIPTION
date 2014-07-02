@@ -1,6 +1,6 @@
 Package: exomePeak
 Type: Package
-Title: exomePeak
+Title: exome-based anlaysis of MeRIP-Seq data
 Version: 1.4.2
 Date: 2014-06-28
 Author: Jia Meng <jia.meng@xjtlu.edu.cn>
