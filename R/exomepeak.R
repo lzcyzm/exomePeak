@@ -3,7 +3,7 @@ exomepeak <- function(
   GENOME = NA,
   UCSC_TABLE_NAME = "knownGene",
   GENE_ANNO_GTF = NA,
-  TRANSCRIPTDB = NA,
+  TXDB = NA,
   TREATED_IP_BAM=character(0),
   TREATED_INPUT_BAM=character(0),
   OUTPUT_DIR=NA,
@@ -64,15 +64,15 @@ exomepeak <- function(
   PARAMETERS$TESTING_MODE=TESTING_MODE
   PARAMETERS$SAVE_RESULT_ON_DISK=SAVE_RESULT_ON_DISK
   PARAMETERS$DIFF_PEAK_METHOD=DIFF_PEAK_METHOD
-  PARAMETERS$TRANSCRIPTDB = TRANSCRIPTDB
+  PARAMETERS$TXDB = TXDB
   
   # save parameter, used when debug
   save_parameters <- FALSE
   if (save_parameters) {save(PARAMETERS,file = "para.Rdata")}
   
   # check annotation
-  if (is.na(PARAMETERS$GENOME) & is.na(PARAMETERS$GENE_ANNO_GTF) & is.na(PARAMETERS$TRANSCRIPTDB)) { 
-		stop("must specify the genome assembly or provide a gtf file/transcriptDb object for exomePeak to work!", 
+  if (is.na(PARAMETERS$GENOME) & is.na(PARAMETERS$GENE_ANNO_GTF) & is.na(PARAMETERS$TXDB)) { 
+		stop("must specify the genome assembly or provide a gtf file/TxDb object for exomePeak to work!", 
 		call. = TRUE, domain = NULL)}
 
   # dependent variables

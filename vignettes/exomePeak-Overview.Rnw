@@ -43,7 +43,7 @@ for the analysis of RNA epitranscriptome sequencing data with affinity-based sho
   \item From one experiment condition: for peak calling to identify the RNA methylation sites
   \item From two experimental conditions: for peak calling and differential analysis to unveil the post-transcriptional regulation of RNA modifications.
 \end{itemize}
-Gene annotation can be provided as a GTF file, a transcriptDb object, or automatically downloaded from UCSC through the internet. Let us firstly load the package and get the toy data (came with the package) ready.
+Gene annotation can be provided as a GTF file, a TxDb object, or automatically downloaded from UCSC through the internet. Let us firstly load the package and get the toy data (came with the package) ready.
 
 <<input bams files>>=
 library("exomePeak")

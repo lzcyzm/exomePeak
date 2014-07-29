@@ -20,7 +20,7 @@ exomepeak(IP_BAM, INPUT_BAM,
           GENOME = NA,
           UCSC_TABLE_NAME = "knownGene",
           GENE_ANNO_GTF = NA,
-          TRANSCRIPTDB = NA, 
+          TXDB = NA, 
           TREATED_IP_BAM = character(0), 
           TREATED_INPUT_BAM = character(0), 
           OUTPUT_DIR = NA, EXPERIMENT_NAME = "exomePeak_output", 
@@ -61,8 +61,8 @@ exomepeak(IP_BAM, INPUT_BAM,
   \item{GENE_ANNO_GTF}{ a string, which specifies a gene annotation GTF file if available, default: NA
 %%     ~~Describe \code{GENE_ANNO_GTF} here~~
 }
-  \item{TRANSCRIPTDB}{ an optional transcriptDb object for gene annotation information used in the analysis, default: NA. The exomepeak function will 
-	first look at TRANSCRIPTDB, then GENE_ANNO_GTF, and then GENOME for gene annnotation information. Please refere to "GenomicFeatures" package for more details about the "TranscriptDb" object.
+  \item{TXDB}{ an optional TxDb object for gene annotation information used in the analysis, default: NA. The exomepeak function will 
+	first look at TXDB, then GENE_ANNO_GTF, and then GENOME for gene annnotation information. Please refere to "GenomicFeatures" package for more details about the "TxDb" object.
 %%     ~~Describe \code{GENE_ANNO_GTF} here~~
 }
   \item{TREATED_IP_BAM}{ a vector of file names, which specifies a number of IP samples from the treated condition in bam format, default: character(0)

@@ -2,7 +2,7 @@
 # read gtf file
 .read.gtf <- function(PARAMETERS){
   # download the annotation
-  if ((!is.na(PARAMETERS$GENOME)) & (!is.na(PARAMETERS$UCSC_TABLE_NAME)) & is.na(PARAMETERS$GENE_ANNO_GTF) & is.na(PARAMETERS$TRANSCRIPTDB)) {
+  if ((!is.na(PARAMETERS$GENOME)) & (!is.na(PARAMETERS$UCSC_TABLE_NAME)) & is.na(PARAMETERS$GENE_ANNO_GTF) & is.na(PARAMETERS$TXDB)) {
     op <- options(warn = (-1))
     txdb =makeTranscriptDbFromUCSC(genome=PARAMETERS$GENOME,
                                    tablename=PARAMETERS$UCSC_TABLE_NAME)
@@ -10,15 +10,15 @@
   }
   
   # use provided annotation data file
-  if (!is.na(PARAMETERS$GENE_ANNO_GTF) & is.na(PARAMETERS$TRANSCRIPTDB) ) {
+  if (!is.na(PARAMETERS$GENE_ANNO_GTF) & is.na(PARAMETERS$TXDB) ) {
     op <- options(warn = (-1))
     txdb=makeTranscriptDbFromGFF(PARAMETERS$GENE_ANNO_GTF,format="gtf")
     options(op)
   }
   
   # use provided annotation data file
-  if (!is.na(PARAMETERS$TRANSCRIPTDB) ) {
-    txdb=PARAMETERS$TRANSCRIPTDB
+  if (!is.na(PARAMETERS$TXDB) ) {
+    txdb=PARAMETERS$TXDB
   }
   
   # try the internet method
