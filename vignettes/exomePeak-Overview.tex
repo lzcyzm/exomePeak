@@ -1,0 +1,71 @@
+%\VignetteIndexEntry{An introduction to exomePeak}
+%\VignetteDepends{}
+%\VignetteKeywords{peak detection, differential methylation}
+%\VignettePackage{exomePeak}
+\documentclass[]{article}
+
+\usepackage{times}
+\usepackage{hyperref}
+
+\newcommand{\Rfunction}[1]{{\texttt{#1}}}
+\newcommand{\Robject}[1]{{\texttt{#1}}}
+\newcommand{\Rpackage}[1]{{\textit{#1}}}
+\newcommand{\Rmethod}[1]{{\texttt{#1}}}
+\newcommand{\Rfunarg}[1]{{\texttt{#1}}}
+\newcommand{\Rclass}[1]{{\textit{#1}}}
+\newcommand{\Rcode}[1]{{\texttt{#1}}}
+
+\newcommand{\software}[1]{\textsf{#1}}
+\newcommand{\R}{\software{R}}
+\newcommand{\exomePeak}{\Rpackage{exomePeak}}
+\newcommand{\bam}{\texttt{BAM}}
+
+
+\title{An Introduction to \Rpackage{exomePeak}}
+\author{Jia Meng, PhD}
+\date{Modified: 18 August, 2013. Compiled: \today}
+
+\usepackage{Sweave}
+\begin{document}
+\input{exomePeak-Overview-concordance}
+
+\maketitle
+
+
+\section{Introduction}
+
+The \exomePeak{} R-package has been developed based on the MATLAB ``exomePeak" package, 
+for the analysis of RNA epitranscriptome sequencing data with affinity-based shotgun sequencing approach, such as MeRIP-Seq or m6A-Seq. 
+\textbf{The exomePeak package is under active development, please don't hesitate to contact me @ jia.meng@hotmail if you have any questions.} The inputs of the main function ``exomepeak" are the IP BAM files and input control BAM files:
+\begin{itemize}
+  \item From one experiment condition: for peak calling to identify the RNA methylation sites
+  \item From two experimental conditions: for peak calling and differential analysis to unveil the post-transcriptional regulation of RNA modifications.
+\end{itemize}
+Gene annotation can be provided as a GTF file, a TxDb object, or automatically downloaded from UCSC through the internet. Let us firstly load the package and get the toy data (came with the package) ready.
+
+\begin{Schunk}
+\begin{Sinput}
+> library("exomePeak")
+> gtf=system.file("extdata", "example.gtf", package="exomePeak")
+> f1=system.file("extdata", "IP1.bam", package="exomePeak")
+> f2=system.file("extdata", "IP2.bam", package="exomePeak")
+> f3=system.file("extdata", "IP3.bam", package="exomePeak")
+> f4=system.file("extdata", "IP4.bam", package="exomePeak")
+> f5=system.file("extdata", "Input1.bam", package="exomePeak")
+> f6=system.file("extdata", "Input2.bam", package="exomePeak")
+> f7=system.file("extdata", "Input3.bam", package="exomePeak")
+> f8=system.file("extdata", "treated_IP1.bam", package="exomePeak")
+> f9=system.file("extdata", "treated_Input1.bam", package="exomePeak")
+> 
+\end{Sinput}
+\end{Schunk}
+
+We will in the next see how the two main functions can be accomplished in a single command. 
+
+The first main function of ``exomePeak" R-package is to call peaks (enriched binding sites) to detect RNA methylation sites on the exome. Inputs are the gene annotation GTF file, IP and Input control samples in BAM format. This function is used when data from only one condition is available.
+
+\begin{Schunk}
+\begin{Sinput}
+> result = exomepeak(GENE_ANNO_GTF=gtf, 
++                    IP_BAM=c(f1,f2,f3,f4), 
++                    INPUT_BAM=c(f5,f6,f7))

@@ -52,7 +52,7 @@ gene=data.frame(tx_name,gene_id)
 
 # 
 
-peaks = makeTxDb(transcripts=transcripts, splicings=splicing,
+peaks = makeTranscriptDb(transcripts=transcripts, splicings=splicing,
                  genes=gene)
 peaks= exonsBy(peaks, by="tx")
 return(peaks)
