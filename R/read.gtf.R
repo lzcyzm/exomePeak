@@ -25,12 +25,12 @@
   op <- options(warn = (-1))
   ID = keys(txdb, "TXID")
   # temp = select(txdb, ID , c(cols(txdb))[c(9:12,13,16)], "TXID")
-  temp = select(txdb, ID , c(columns(txdb))[c(9:12,13,16)], "TXID")
+  temp = select(txdb, ID , c(columns(txdb))[c(7:8,12:14)], "TXID")
   options(op)
 
   # get the anno
-  temp = cbind(temp[,2:7],"exon")
-  temp=temp[,c(1,7,3,4,2,5,6)]
+  temp = cbind(temp,"exon")
+  temp=temp[,c(2,7,4,5,3,6,1)]
   colnames(temp)=c("chr","feature","start","stop","strand","gene","transcript")
   gtf=temp
   

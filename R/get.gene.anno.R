@@ -1,5 +1,7 @@
 .get.gene.anno <- function(ibatch,ANNOTATION,ANNOTATION_BATCH_ID) {
   
+  # save(ibatch,ANNOTATION,ANNOTATION_BATCH_ID, file = "temp.RData")
+  
   # extract batch annotation
   anno=ANNOTATION[which(ANNOTATION_BATCH_ID==ibatch),c(1,3:6)]
   anno_unique=unique(anno)
