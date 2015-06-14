@@ -163,7 +163,7 @@ RMT <- function(
     
   }
   write.table(count_input,paste(dir,"count_input.xls",sep = '/'),sep = "\t",quote = FALSE,col.names = TRUE,row.names = FALSE)
-  write.table(count_input,paste(dir,"rpkm_input.xls",sep = '/'),sep = "\t",quote = FALSE,col.names = TRUE,row.names = FALSE)
+  write.table(rpkm_input,paste(dir,"rpkm_input.xls",sep = '/'),sep = "\t",quote = FALSE,col.names = TRUE,row.names = FALSE)
   #rpkm in ipbams
   for(i in 1:length(PARAMETERS$IP_BAM)){
     filepath <- PARAMETERS$IP_BAM[i]
@@ -185,7 +185,7 @@ RMT <- function(
     rpkm_ip[,i] <- rpm / geneLengthsInKB 
   }
   write.table(count_ip,paste(dir,"count_ip.xls",sep = '/'),sep = "\t",quote = FALSE,col.names = TRUE,row.names = FALSE)
-  write.table(count_ip,paste(dir,"rpkm_ip.xls",sep = '/'),sep = "\t",quote = FALSE,col.names = TRUE,row.names = FALSE)
+  write.table(rpkm_ip,paste(dir,"rpkm_ip.xls",sep = '/'),sep = "\t",quote = FALSE,col.names = TRUE,row.names = FALSE)
   
   #return to all conditions
   matrix_log2_fc = matrix(0,length(peak),ip_length)
