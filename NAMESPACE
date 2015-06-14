@@ -3,4 +3,5 @@ export(ctest)
 export(rhtest)
 export(exomepeak)
 export(bltest)
+export(RMT)
 
