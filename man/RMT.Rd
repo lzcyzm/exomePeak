@@ -103,13 +103,22 @@ input2bam[[2]] <- c(1,2) # the 2nd ip sample uses the 1st & 2nd input samples as
 input2bam[[3]] <- c(1,2) # the 3rd ip sample uses the 1st & 2nd input samples as control
 input2bam[[4]] <- c(3)   # the 4th ip sample uses the 3rd input sample as control
 
-# compute read counts and rpkm
+# Extract the combinatorial RNA methylome
+# unfortunately, this function has not been optimized for parallel processing.
+# This part will take a really long time on real data
 RMT(INPUT_BAM=input_bam, IP_BAM=ip_bam, INPUT2IP=input2bam, GENE_ANNO_GTF=gene_anno_gtf)
+
 # RMT result will be generated in RMT_result folder under current working directoy, including:
 # the merged peaks or the combinatorial RNA methylome from all replicates
 # the bed file, which can be viewed under IGV
 # reads count of all peaks for both the ip and input samples
 # RPKM of all the peaks for both the ip and input samples (for your reference only).
+
+# Alternatively, exomePeak package can automatically download the complete transcriptome.
+# And then scan the entire transcriptome for RNA methylation sites
+# It will take a long time
+# RMT(INPUT_BAM=input_bam, IP_BAM=ip_bam, INPUT2IP=input2bam, GENOME="hg19")
+
 
 }
 
