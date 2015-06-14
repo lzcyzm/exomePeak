@@ -98,9 +98,9 @@ f2 <- system.file("extdata", "Input2.bam", package="exomePeak")
 f3 <- system.file("extdata", "Input3.bam", package="exomePeak")
 input_bam <- c(f1,f2,f3)
 input2bam <- list(4)
-input2bam[[1]] <- c(1,2) # the 1st ip sample uses the 1st and the 2nd input sample as control
-input2bam[[2]] <- c(1,2) # the 2nd ip sample uses the 1st and the 2nd input sample as control
-input2bam[[3]] <- c(1,2) # the 3rd ip sample uses the 1st and the 2nd input sample as control
+input2bam[[1]] <- c(1,2) # the 1st ip sample uses the 1st & 2nd input samples as control
+input2bam[[2]] <- c(1,2) # the 2nd ip sample uses the 1st & 2nd input samples as control
+input2bam[[3]] <- c(1,2) # the 3rd ip sample uses the 1st & 2nd input samples as control
 input2bam[[4]] <- c(3)   # the 4th ip sample uses the 3rd input sample as control
 
 # compute read counts and rpkm
