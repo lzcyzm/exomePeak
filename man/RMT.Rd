@@ -86,7 +86,6 @@ Lian Liu <liulian19860905@163.com>
 # please feel free to contact liulian19860905@163.com for any questions
 
 # load library and specify the parameters
-library("RMT")
 gene_anno_gtf <- system.file("extdata", "example.gtf", package="exomePeak")
 f1 <- system.file("extdata", "IP1.bam", package="exomePeak")
 f2 <- system.file("extdata", "IP2.bam", package="exomePeak")
