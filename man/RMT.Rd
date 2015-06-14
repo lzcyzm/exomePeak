@@ -104,7 +104,7 @@ input2bam[[3]] <- c(1,2) # the 3rd ip sample uses the 1st and the 2nd input samp
 input2bam[[4]] <- c(3)   # the 4th ip sample uses the 3rd input sample as control
 
 # compute read counts and rpkm
-RMT(INPUT_BAM=input_bam,IP_BAM=ip_bam,INPUT2IP = input2bam, GENE_ANNO_GTF=gene_anno_gtf)
+RMT(INPUT_BAM=input_bam, IP_BAM=ip_bam, INPUT2IP=input2bam, GENE_ANNO_GTF=gene_anno_gtf)
 # RMT result will be generated in RMT_result folder under current working directoy, including:
 # the merged peaks or the combinatorial RNA methylome from all replicates
 # the bed file, which can be viewed under IGV

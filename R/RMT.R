@@ -1,10 +1,12 @@
 
 
 RMT <- function(
-  INPUT_BAM,IP_BAM,
+  INPUT_BAM,
+  IP_BAM,
   INPUT2IP = NA, 
   GENE_ANNO_GTF = NA, 
-  GENOME = NA, UCSC_TABLE_NAME = "knownGene",
+  GENOME = NA, 
+  UCSC_TABLE_NAME = "knownGene",
   TXDB = NA,
   EXOME_OUTPUT_DIR = NA,
   RMT_OUTPUT_DIR = NA,
