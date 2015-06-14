@@ -211,7 +211,16 @@ RMT <- function(
   # delete un-necessary files
   file.remove(paste(dir,"all_peak.xls",sep = '/'))
   file.remove(paste(dir,"all_information.xls",sep = '/')) 
-}
+
+  # notification
+  print("***************************")
+  print(paste("The combinatorial RNA methylome is generated under:",dir))
+  print("Including:")
+  print("1. Merged Peaks")
+  print("2. Merged Peaks in BED format")
+  print("3. Reads count for every peak in every bam file")
+  print("4. RPKM for every peak in every bam file")
+  }
 
 
 # read gtf file
