@@ -8,15 +8,16 @@ Extract a combinatorial RNA methylome from multiple biological conditions or rep
 This function will extract a combinatorial RNA methylome (tens of thousands of RNA methylation sites) from multiple biological conditions or replicates and count with MeRIP-Seq datasets.
 }
 \usage{
-RMT(INPUT_BAM, IP_BAM, 
-          INPUT2IP = NA, 
-          GENE_ANNO_GTF = NA, 
-          GENOME = NA, 
-          UCSC_TABLE_NAME = "knownGene",
-          TXDB = NA,
-          EXOME_OUTPUT_DIR = NA, 
-          RMT_OUTPUT_DIR = NA, 
-          RMT_EXPERIMENT_NAME = "GO_Result")
+RMT(INPUT_BAM, 
+    IP_BAM, 
+    INPUT2IP = NA, 
+    GENE_ANNO_GTF = NA, 
+    GENOME = NA, 
+    UCSC_TABLE_NAME = "knownGene",
+    TXDB = NA,
+    EXOME_OUTPUT_DIR = NA, 
+    RMT_OUTPUT_DIR = NA, 
+    RMT_EXPERIMENT_NAME = "RMT_Result")
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
