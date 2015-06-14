@@ -42,6 +42,7 @@ RMT <- function(
     for(i in 1:ip_length){
       experiment_name = paste(PARAMETERS$GO_EXPERIMENT_NAME,"/temp/IP_rep_",i,sep="")
       all_filepath[i] = PARAMETERS$IP_BAM[i]
+      print(paste("Processing IP sample",i))
       temp <- exomepeak(GENE_ANNO_GTF = GENE_ANNO_GTF, 
                         GENOME = GENOME, UCSC_TABLE_NAME = UCSC_TABLE_NAME,
                         TXDB = TXDB, IP_BAM = c(PARAMETERS$IP_BAM[i]), 
@@ -60,6 +61,7 @@ RMT <- function(
         }
       }      
       all_filepath[i] <- paste(PARAMETERS$EXOME_OUTPUT_DIR,experiment_name,sep = '/')
+      print(paste("Processing IP sample",i))
       temp <- exomepeak(GENE_ANNO_GTF = GENE_ANNO_GTF, 
                         GENOME = GENOME, UCSC_TABLE_NAME = UCSC_TABLE_NAME,
                         TXDB = TXDB, IP_BAM = c(PARAMETERS$IP_BAM[i]), 
@@ -290,7 +292,7 @@ RMT <- function(
     
     # 
     
-    peaks = makeTranscriptDb(transcripts=transcripts, splicings=splicing,
+    peaks = makeTxDb(transcripts=transcripts, splicings=splicing,
                              genes=gene)
     tx <- exonsBy(peaks, "tx",use.names=TRUE)
     mcols(tx) <- mcols_info
