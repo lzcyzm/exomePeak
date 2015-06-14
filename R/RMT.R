@@ -38,7 +38,13 @@ RMT <- function(
   input_length <- length(PARAMETERS$INPUT_BAM)
   ip_length <- length(PARAMETERS$IP_BAM)
   all_filepath <- vector()
-  if(is.na(PARAMETERS$INPUT2IP)){
+  
+  # decide whether paired
+  temp1 <- is.na(PARAMETERS$INPUT2IP)
+  flag <- temp1[1]
+  
+  
+  if(flag){
     for(i in 1:ip_length){
       experiment_name = paste(PARAMETERS$GO_EXPERIMENT_NAME,"/temp/IP_rep_",i,sep="")
       all_filepath[i] = PARAMETERS$IP_BAM[i]
@@ -213,6 +219,7 @@ RMT <- function(
   file.remove(paste(dir,"all_information.xls",sep = '/')) 
 
   # notification
+  print("***************************")
   print("***************************")
   print(paste("The combinatorial RNA methylome is generated under:",dir))
   print("Including:")
