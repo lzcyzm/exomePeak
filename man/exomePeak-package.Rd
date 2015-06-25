@@ -12,15 +12,24 @@ The package is developed for the analysis of affinity-based epitranscriptome sho
 \tabular{ll}{
 Package: \tab exomePeak\cr
 Type: \tab Package\cr
-Version: \tab 1.8.1\cr
-Date: \tab 2015-06-01\cr
+Version: \tab 1.9.1\cr
+Date: \tab 2015-06-25\cr
 License: \tab GPL-2 \cr
 }
 
 }
 
 \references{
+
+For peak calling or general purpose:
 Meng, Jia, Xiaodong Cui, Manjeet K. Rao, Yidong Chen, and Yufei Huang. "Exome-based analysis for RNA epigenome sequencing data." Bioinformatics 29, no. 12 (2013): 1565-1567.
+
+For differential analysis with rhtest:
+Meng, Jia, Zhiliang Lu, Hui Liu, Lin Zhang, Shaowu Zhang, Yidong Chen, Manjeet K. Rao, and Yufei Huang. "A protocol for RNA methylation differential analysis with MeRIP-Seq data and exomePeak R/Bioconductor package." Methods 69, no. 3 (2014): 274-281.
+
+For combinatorial RNA methylome with RMT:
+Liu, Lian, Shao-Wu Zhang, Yu-Chen Zhang, Hui Liu, Lin Zhang, Runsheng Chen, Yufei Huang, and Jia Meng. "Decomposition of RNA methylome reveals co-methylation patterns induced by latent enzymatic regulators of the epitranscriptome." Molecular BioSystems 11, no. 1 (2015): 262-274.
+
 }
 
 \keyword{ Statistical Inference }
