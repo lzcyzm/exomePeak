@@ -2,7 +2,7 @@ Package: exomePeak
 Type: Package
 Title: exome-based anlaysis of MeRIP-Seq data: peak calling and
         differential analysis
-Version: 1.8.1
+Version: 1.9.1
 Date: 2015-06-101
 Author: Lin Zhang <lin.zhang@cumt.edu.cn>, Lian Liu <liulian19860905@163.com>, Jia Meng <jia.meng@xjtlu.edu.cn>
 Maintainer: Lin Zhang <lin.zhang@cumt.edu.cn>, Lian Liu <liulian19860905@163.com>, Jia Meng <jia.meng@xjtlu.edu.cn>
@@ -10,5 +10,3 @@ Description: The package is developed for the analysis of affinity-based epitran
 License: GPL-2
 Depends: Rsamtools, GenomicFeatures (>= 1.14.5), rtracklayer, GenomicAlignments
 biocViews: Sequencing, HighThroughputSequencing, Methylseq, RNAseq
-Packaged: 2015-06-101 04:36:30 UTC; biocbuild
-NeedsCompilation: no
