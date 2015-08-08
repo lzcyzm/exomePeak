@@ -16,6 +16,38 @@ bltest <- function(untreated_ip,untreated_input,treated_ip,treated_input,
   # treated_ip: y1 ... of the treated ip sample
   # treated_input: x1 ... of the treated input sample
   
+    # updated 2015-8-8  
+    untreated_ip_temp <- untreated_ip
+    treated_input_temp <- treated_input
+    untreated_input_temp <- untreated_input
+    treated_ip_temp <- treated_ip
+    if ((untreated_ip_total*treated_input_total) > (untreated_input_total*treated_ip_total)){
+    # down-size untreated_ip_total*treated_input_total
+    if (untreated_ip_total > treated_input_total) {
+      temp=(untreated_input_total*treated_ip_total)/treated_input_total;
+      untreated_ip_temp=round(untreated_ip_temp*temp/untreated_ip_total);
+    } else {
+      temp=(untreated_input_total*treated_ip_total)/untreated_ip_total
+      treated_input_temp=round(treated_input_temp*temp/treated_input_total);
+    }
+  }
+  
+  if ((untreated_ip_total*treated_input_total) < (untreated_input_total*treated_ip_total)) {
+    if (untreated_input_total>treated_ip_total) {
+      temp=round(untreated_ip_total*treated_input_total/treated_ip_total)
+      untreated_input_temp=round(untreated_input_temp*temp/untreated_input_total)   
+    } else {
+      temp=(untreated_ip_total*treated_input_total)/untreated_input_total
+      treated_ip_temp=round(treated_ip_temp*temp/treated_ip_total)
+    }
+  }
+  
+    # replace 0 with 1 to avoid ridiculous p-values
+  untreated_ip_temp=pmax(1,untreated_ip_temp)
+  untreated_input_temp=pmax(1,untreated_input_temp)
+  treated_ip_temp=pmax(1,treated_ip_temp)
+  treated_input_temp=pmax(1,treated_input_temp)
+  
   untreated_input[untreated_input==0] <- 1
   treated_input[treated_input==0] <- 1
   untreated_ip[untreated_ip==0] <- 1
@@ -46,7 +78,9 @@ bltest <- function(untreated_ip,untreated_input,treated_ip,treated_input,
   # Original
   # log.fc=log((treated_ip/treated_input)/(untreated_ip/untreated_input))
   # updated 2014-9-10  
-  log.fc=log(((treated_ip/treated_ip_total)/(treated_input/treated_input_total))/((untreated_ip/untreated_ip_total)/(untreated_input/untreated_input_total)))
+  # log.fc=log(((treated_ip/treated_ip_total)/(treated_input/treated_input_total))/((untreated_ip/untreated_ip_total)/(untreated_input/untreated_input_total)))
+
+  log.fc=log((treated_ip_temp/treated_input_temp)/(untreated_ip_temp/untreated_input_temp))
   
   D <- 2 * (untreated_input*log(p0.hat/p0.bar)+untreated_ip*log((1-p0.hat)/(1-p0.bar))+treated_input*log(p1.hat/p1.bar)+treated_ip*log((1-p1.hat)/(1-p1.bar)))
 #  DIFF[a==0] <- min(DIFF)
