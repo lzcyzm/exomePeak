@@ -34,23 +34,3 @@ citEntry(entry="article",
            paste("J. Meng, Z. Lu, H. Liu, L. Zhang, S. Zhang, Y. Chen, M. K. Rao, and Y. Huang, ",
                  "A protocol for RNA methylation differential analysis with MeRIP-Seq data and exomePeak R/Bioconductor package,",
                  " Methods, 2014" ) )
-                 
-                 
-                 
-citEntry(entry="article",
-         title = "Decomposition of RNA methylome reveals co-methylation patterns induced by latent enzymatic regulators of the epitranscriptome",
-         author = personList( as.person("Lian Liu"), 
-                              as.person("Shao-Wu Zhang"),
-                              as.person("Yu-Chen Zhang"),
-                              as.person("Hui Liu"),
-                              as.person("Lin Zhang"),
-                              as.person("Runsheng Chen"),
-                              as.person("MYufei Huang"),
-                              as.person("Jia Meng")),
-         year = 2015,
-         journal = "Molecular BioSystems",
-         
-         textVersion = 
-           paste("Liu, Lian, Shao-Wu Zhang, Yu-Chen Zhang, Hui Liu, Lin Zhang, Runsheng Chen, Yufei Huang, and Jia Meng, ",
-                 "Decomposition of RNA methylome reveals co-methylation patterns induced by latent enzymatic regulators of the epitranscriptome,",
-                 " Molecular BioSystems, 2015" ) )
